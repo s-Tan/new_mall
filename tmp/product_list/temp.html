@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<style type="text/css">
+    body {
+        background: #eee;
+    }
+
+    .list {
+        width: 100%;
+    }
+
+    .h5-items-s {
+        width: 738px;
+        height: 282px;
+        margin: 9px auto 0 auto;
+        background: #fff;
+        border-radius: 10px;
+    }
+
+    .item-pic {
+        display: inline-block;
+        position: relative;
+        width: 282px;
+        height: 282px;
+    }
+
+    .item-pic .flat {
+        position: absolute;
+        right: 0;
+        top: 24px;
+        z-index: 1;
+    }
+
+    .item-pic .miao-sha {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        z-index: 1;
+        border-radius: 0 0 0 10px;
+    }
+
+    .item-pic .pro-img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .show123 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 84px;
+        height: 84px;
+        z-index: 990;
+    }
+
+    .h5-items-s:nth-of-type(1) .item-pic .show123 {
+        background: url(../imgs/hot1.png) no-repeat center / 100%;
+    }
+
+    .h5-items-s:nth-of-type(2) .item-pic .show123 {
+        background: url(../imgs/hot2.png) no-repeat center / 100%;
+    }
+
+    .h5-items-s:nth-of-type(3) .item-pic .show123 {
+        background: url(../imgs/hot3.png) no-repeat center / 100%;
+    }
+
+    .item-info {
+        display: inline-block;
+        width: 427px;
+        height: 282px;
+        margin-left: 20px;
+        padding-right: 20px;
+    }
+
+    .pro-name {
+        margin-top: 20px;
+        min-height: 76px;
+    }
+
+    .pro-name span {
+        display: inline-block;
+        text-overflow: -o-ellipsis-lastline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: 28px;
+        zoom: 0.99;
+        color: #323232;
+        text-indent: 32px;
+    }
+
+    .dmdf {
+        display: inline-block;
+        width: 85px;
+        height: 26px;
+        margin-top: 20px;
+    }
+
+    .h5-item-price-info {
+        margin-top: 27px;
+    }
+
+    .cost-price {
+        font-size: 36px;
+        zoom: 0.9999;
+        color: #323232;
+    }
+
+    .cost-price::before {
+        content: '￥';
+        color: #323232;
+    }
+
+    .promote-price-flex {
+        display: inline-block;
+        font-size: 24px;
+        height: 35px;
+        line-height: 35px;
+        zoom: 0.9999;
+        color: #d43c31;
+        padding-left: 135px;
+        background: url(../imgs/yyelf.svg) no-repeat left bottom / auto 100%;
+        margin-top: 11px;
+    }
+
+    .lable {
+        float: right;
+        width: 130px;
+        height: 50px;
+        right: 21px;
+    }
+
+    .quan-wrapper {
+        display: inline-block;
+        height: 35px;
+        line-height: 35px;
+        background: url(../imgs/lingquan.svg) no-repeat left top / auto 100%, url(../imgs/quan_left.png) no-repeat right top/ auto 100%;
+        border: 1px solid #fc4164;
+        border-left: none;
+        border-right: none;
+        padding-left: 71px;
+        color: #fc4164;
+        font-size: 20px;
+        zoom: 0.9999;
+        margin-top: 11px;
+    }
+
+    .jd {
+        background: url(../imgs/jd.png) no-repeat left top / 27px auto;
+    }
+
+    .yhd {
+        background: url(../imgs/yhd.png) no-repeat left top / 27px auto;
+    }
+
+    .tmall {
+        background: url(../imgs/tmall.png) no-repeat left top / 27px auto;
+    }
+
+    .taobao {
+        background: url(../imgs/taobao.png) no-repeat left top / 27px auto;
+    }
+
+    .sj {
+        background: url(../imgs/shoujia.png) no-repeat left top / 27px auto;
+    }
+</style>
+
+<body>
+    <ul class="list">
+        <li class="h5-items-s">
+            <a href="javascript:;">
+                <div class="item-pic lazy">
+                    <img class="flat" src="../imgs/is_new.png">
+                    <div class="show123"></div>
+                    <img src="../imgs/ms.png" class="miao-sha">
+                    <img class="pro-img" src="../imgs/product_item.jpg">
+                </div>
+                <div class="item-info ">
+                    <p class="pro-name">
+                        <span class="jd">无印良品 夏日河谷 纯棉被套无印良品 夏日河谷 纯棉被套无印良品 夏日河谷 纯棉被套无印良品 夏日河谷 纯棉被套无印良品 夏日河谷 纯棉被套</span>
+                    </p>
+                    <div class="dmdf">
+                        <img src="../imgs/dmdf.png">
+                    </div>
+
+                    <div class="h5-item-price-info">
+                        <div class="cost-price">999</div>
+                        <span class="promote-price-flex">9999</span>
+                        <span class="quan-wrapper" style="display:none;">
+                            <div class="quan-price"></div>
+                        </span>
+                        <span class="lable">
+                            <img src="../imgs/msq.png">
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <script>
+        var baseWidth = 750;
+        var currWidth = document.getElementsByTagName('html')[0].offsetWidth;
+
+        document.getElementsByTagName('html')[0].style.zoom = currWidth / baseWidth;
+    </script>
+</body>
+
+</html>

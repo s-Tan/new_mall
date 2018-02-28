@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!--<meta name="viewport" content="width=375,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>-->
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <title></title>
+</head>
+
+<body>
+    <div id="app" class="wrapper" style="display:none;" v-show="isAppShow">
+        <div class="top-menu-wrapper" v-show="showSearch || (navList && navList.length)">
+            <div class="search-wrapper" v-show="showSearch">
+                <div class="home" @click="jumpHome()"></div>
+                <input type="text" class="search" placeholder="搜索淘宝/京东宝贝" @tap="searchJump()"></input>
+                <div class="mine" v-show="face" @click="jumpMine()">
+                    <img :src="face">
+                </div>
+            </div>
+            <top-menu-bar-v1 :nav-list="navList" :today-new-num="todayNewNum" :show-all="showAll"></top-menu-bar-v1>
+        </div>
+        <div>
+            <banner :img-list="imgList"></banner>
+        </div>
+
+        <div class="hhjx-wrapper" v-show="products && products.length">
+            <product-list :products="products" :isshow123="isShow123" :id="hhjxId" :gid="hhjxgId"></product-list>
+            <loading-product :show-no-have-more="noHaveMore" :show-loading-more="isLoadingMore"></loading-product>
+        </div>
+        <!--悬浮窗-->
+        <comp-drag :flowad="flowAd"></comp-drag>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <title>购物</title>
+</head>
+
+<body>
+    <div id="app" class="wrapper display-none">
+        <div class="to-top" v-show="showReturnToTop"></div>
+        <pop-rebate-mes></pop-rebate-mes>
+        <div class="top-menu-wrapper">
+            <div class="search-wrapper" v-show="showSearch">
+                <input type="text" class="search" placeholder="搜索淘宝/京东宝贝" @tap="searchJump()"></input>
+                <div class="mine" v-show="face" @tap="jumpMine()">
+                    <img :src="face"> </div>
+            </div>
+            <top-menu-bar-v1 :nav-list="navList" :today-new-num="todayNewNum" :show-all="showAll"></top-menu-bar-v1>
+        </div>
+        <div>
+            <banner :img-list="imgList" position="banner1"></banner>
+        </div>
+        <div class="ball-wrapper" v-show="ballList && ballList.length>0">
+            <function-ball :list="ballList"></function-ball>
+        </div>
+        <!--新上顶部banner-->
+        <div>
+            <banner-two :img-list="imgListBanner" position="banner3"></banner-two>
+        </div>
+        <div class="flash-wrapper">
+            <flash-sale></flash-sale>
+        </div>
+        <div class="zad-wrapper">
+            <index-area :list="zad"></index-area>
+        </div>
+        <div>
+            <banner :img-list="mImgList" position="banner2"></banner>
+        </div>
+        <!--区位广告块-->
+        <div v-show="localBlockList.length">
+            <index-area-ad :img-list="localBlockList"></index-area-ad>
+        </div>
+        <!-- <div class="djdzm-wrapper" v-show="djdzmProduct1.product_name">
+            <div class="djdzm-cp-top">
+                <span>大家都在买</span>
+                <span @click="redirect(djdzmUrl)">更多</span>
+            </div>
+            <djdzm :product1="djdzmProduct1" :product2="djdzmProduct2" :product3="djdzmProduct3" :resid="djdzmId" :gid="djdzmgId" :moreurl="djdzmUrl"></djdzm>
+        </div> -->
+        <div class="hhjx-wrapper" v-show="products && products.length">
+            <div class="hhjx-header"> <span>好货精选</span> <span>每天10点上新</span>
+                <div class="border-y-5 position-a"></div>
+            </div>
+            <product-list :products="products" :id="hhjxId" :gid="hhjxgId"></product-list>
+            <loading-product :show-no-have-more="noHaveMore" :show-loading-more="isLoadingMore"></loading-product>
+        </div>
+        <!--首页弹窗-->
+        <pop-up :pad="pad"></pop-up>
+        <!--悬浮窗-->
+        <comp-drag :flowad="flowAd"></comp-drag>
+        <img class="opacity0-absolute" src="imgs/alert_tb_rebate.png">
+        <img class="opacity0-absolute" src="imgs/alert_tb.png">
+        <img class="opacity0-absolute" src="imgs/alert_tb_head.gif"> </div>
+</body>
+
+</html>
